@@ -62,6 +62,9 @@ conda install pytorch torchvision torchaudio cudatoolkit=10.2 -c pytorch
 conda install scikit-learn
 ```
 
+#### NOTE
+Please kindly note that cudatoolkit version may be different.
+
 ## Code Usage
 You may run <i>main.py</i> or <i>run.ipynb</i> to see what's going on.
 
