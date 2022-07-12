@@ -6,6 +6,7 @@ import torch.nn.functional as F
 import torch.optim as optim
 
 device = torch.device("cpu")
+#device = torch.device("cpu" if torch.cuda.is_available() else "cpu")
 
 class MyDeepQNet(nn.Module):
     def __init__(self, num_states, num_actions):
@@ -29,6 +30,50 @@ class MyDeepQNet(nn.Module):
 
 
 class environment:
+    '''
+    Here goes a figure of my environment.
+    
+    ----------------------------------O----------------------------------
+    
+    Fig 1. Environment: Moving ball with uncertainty on momentum
+    
+    The figure above shows the initial position(state) of the environment.
+    With each action(choice) of agent, the ball is accelerated to the di-
+    rection to the chosen position from agent.
+    On every strong acceleration, the agent gets high reward from the squ-
+    are of the acceleration.
+    By fortunate guess, the machine is expected to keep the ball in the
+    center by picking each side of the edges repeatedly.
+    When the ball travels out of our field view, the agent gets -100 of
+    reward.
+    
+    The ball consists of 2 state values, (position, momentum). [float]
+    The state values does not change on observations in a single time step.
+    The time step flows only when the action is taken.
+    While the position is transparent to the agent, (so the agent directly
+    knows about the position exactly,) the momentum is kept a noisy source.
+    (Uncertainty Principle: You cannot know the both of position and speed
+     exactly!!!)
+    FYI, the observed momentum is assumed to be added by Uniform(-5, 5).
+    
+    You may increase the MAX_VALUE (FIELD_SIZE) on the main.py to reduce
+    the effect of noisy momentum source, or you can also increase the ob-
+    serving state space in main. In this environment, the agent NEEDS to
+    get multiple samples of the momentum by observing in order to maintain
+    a high reward.
+    
+    DQN basically does not care about WHAT the reward is, while it cares
+    about HOW the neural network to be formed. This point of view is appl-
+    ied to my code.
+    
+    You may start your own DQN work by playing with this example.
+    You will feel like changing this environment.
+    It means that you will start your own DQN work.
+    
+    Hope the best,
+    Hosung Joo
+    '''
+    
     def __init__(self, MAX_VALUE):
         print("a simple environment is initiated.")
         self.state = MAX_VALUE/2.       # initial: center
@@ -43,7 +88,7 @@ class environment:
         self.momentum = self.momentum + 0.2*acceleration
         self.state = self.state + 0.1*self.momentum
 
-        reward = (choice - self.state)**2
+        reward = acceleration**2
         if ((self.state > self.MAX) or (self.state < 0)):
             reward = -100.
 
@@ -135,7 +180,7 @@ def train(agent, iter_num, epsilon, __SHOW_ITER__=500, __DEBUG__=False):
         # sample data.
         with torch.no_grad():
             s0 = agent.observe()
-            piv = torch.rand(1).to(torch.device("cuda" if torch.cuda.is_available() else "cpu"))
+            piv = torch.rand(1).to(device)
             if (piv > epsilon):
                 a = agent.Q_choice(s0)
             else:
