@@ -38,7 +38,7 @@ class environment:
 
     def action(self, choice):
         self.momentum = self.momentum + 0.2*(choice - self.state)
-        self.state = self.state + 0.1*momentum
+        self.state = self.state + 0.1*self.momentum
 
         reward = (choice - self.state)**2
         if ((self.state > self.MAX) or (self.state < 0)):
