@@ -56,16 +56,21 @@ like this:
 
 ### DQN environment setup
 You need to install a <b>GPU-supported pytorch</b> by running below. You would also need the <b>scikit-learn</b> package for the data analysis. This would take a couple of minutes.
+#### NOTE
+Please kindly note that cudatoolkit version may be different.
 
 ```shell
 conda install pytorch torchvision torchaudio cudatoolkit=10.2 -c pytorch
 conda install scikit-learn
 ```
 
-#### NOTE
-Please kindly note that cudatoolkit version may be different.
 
 ## Code Usage
 You may run <i>main.py</i> or <i>run.ipynb</i> to see what's going on.
 
 Additional changes may take place.
+
+## TODO
+- Batch Normalization
+- Loss Moving Average
+- GUI (ipython notebook plot - using matplotlib)
