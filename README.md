@@ -1,7 +1,7 @@
 # DQN-startup
 This project provides a mini DQN startup environment.
 
-For your information, you can <i>copy and paste</i> this line (when your directory is <i>~/DQN-startup</i>) into your CLI terminal.
+For your information, you can <i>copy and paste</i> this line (when your directory is <i>~/DQN-startup</i>) into your CLI terminal to download this project into your machine.
 
 ```shell
 git clone https://github.com/hsjoo-lghtsnd/DQN-startup ~/DQN-startup
@@ -20,7 +20,7 @@ rm -rf ~/miniconda3/miniconda.sh
 ~/miniconda3/bin/conda init zsh
 ```
 
-You may reopen your terminal. You will see (base) in your terminal line. You can turn off the auto conda startup by typing:
+You may reopen your terminal. You will see (base) in your terminal line. You can turn off the auto conda startup on terminal by typing:
 
 ```shell
 conda config --set auto_activate_base false
@@ -39,11 +39,21 @@ You will see a similar screen like this:
 
 ![conda-activate](https://user-images.githubusercontent.com/46191084/178430890-7f6caeba-50be-40a7-9bd3-557cdb089ae8.png)
 
-You can deactivate (unnecessarily) your conda environment by:
+(optional FYI) You can deactivate (unnecessarily) your conda environment by:
 
 ```shell
 conda deactivate
 ```
 
 ### DQN environment setup
+You need to install a <b>GPU-supported pytorch</b> by running below. You would also need the <b>scikit-learn</b> package for the data analysis. This would take a couple of minutes.
 
+```shell
+conda install pytorch torchvision torchaudio cudatoolkit=10.2 -c pytorch
+conda install scikit-learn
+```
+
+## Code Usage
+You may run <i>main.py</i> or <i>run.ipynb</i> to see what's going on.
+
+Additional changes may take place.
