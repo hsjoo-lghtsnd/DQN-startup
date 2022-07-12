@@ -45,6 +45,15 @@ You will see a similar screen like this:
 conda deactivate
 ```
 
+You can check your conda environment by:
+```python
+import torch
+```
+like this:
+
+![conda-activate-reason](https://user-images.githubusercontent.com/46191084/178488583-8b5569cf-2f8f-470f-b7c2-d582b96cf4ef.png)
+
+
 ### DQN environment setup
 You need to install a <b>GPU-supported pytorch</b> by running below. You would also need the <b>scikit-learn</b> package for the data analysis. This would take a couple of minutes.
 
