@@ -143,7 +143,7 @@ def train(agent, iter_num, epsilon, __DEBUG__=False, __SHOW_ITER__=500):
 
         Q0 = agent.get_Q(s0)
         Q1 = agent.get_Q(s1)
-        y = r + (g*max(Q))
+        y = r + (g*max(Q1))
         loss = (y - Q0)**2
         
         loss.backward()
