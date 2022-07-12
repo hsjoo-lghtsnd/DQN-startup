@@ -118,7 +118,7 @@ class DQNAgent:
         return torch.randint(0,self.MAX+1,(1,)).numpy()
 
     def get_Q(self, state):
-        s = torch.tensor(state, device = self.device, dtype = self.model.get_dtype)
+        s = torch.tensor(state, device = self.device, dtype = self.model.get_dtype())
         return self.model.forward(s)
 
     def Q_choice(self, state):
