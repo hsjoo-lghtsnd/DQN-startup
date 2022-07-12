@@ -29,8 +29,8 @@ class environment:
     def __init__(self, MAX_VALUE):
         print("a simple environment is initiated.")
 
-        self.state = MAX_VALUE/2.   # initial: center
-        self.momentum = 0.          # initial: zero speed
+        self.state = torch.tensor(MAX_VALUE)/torch.tensor(2.)  # initial: center
+        self.momentum = torch.tensor(0.)                       # initial: zero speed
         self.MAX = MAX_VALUE
 
     def action(self, choice):
