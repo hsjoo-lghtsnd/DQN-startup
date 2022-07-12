@@ -71,7 +71,7 @@ class environment:
     It means that you will start your own DQN work.
     
     Hope the best,
-    Hosung Joo
+    Hosung Joo (zxcqa123@postech.ac.kr)
     '''
     
     def __init__(self, MAX_VALUE):
