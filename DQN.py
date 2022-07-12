@@ -123,7 +123,7 @@ class DQNAgent:
 
     def Q_choice(self, state):
         Q = self.get_Q(state)
-        action = np.argmax(Q)
+        action = np.argmax(Q.cpu())
         return action
 
 def train(agent, iter_num, epsilon, __DEBUG__=False, __SHOW_ITER__=500):
