@@ -1,0 +1,17 @@
+import DQN
+
+FIELD_SIZE = 40
+STACKED_OBSERVATION = 30
+GAMMA = 0.5
+
+ITERATION = 100000
+epsilon = 0.1
+
+SHOW_ITERATION = 25
+LR = 1e-9
+
+env = DQN.environment(FIELD_SIZE)
+agent = DQN.DQNAgent(env, FIELD_SIZE, STACKED_OBSERVATION, GAMMA, LR)
+#agent = DQN.DQNAgent(env, FIELD_SIZE, STACKED_OBSERVATION, GAMMA)
+#DQN.train(agent, ITERATION, epsilon, SHOW_ITERATION)
+DQN.train(agent, ITERATION, epsilon)
