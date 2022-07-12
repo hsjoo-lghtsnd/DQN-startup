@@ -130,13 +130,14 @@ def train(agent, iter_num, epsilon, __DEBUG__=False, __SHOW_ITER__=500):
     g = agent.get_gamma()
     for i in range(iter_num):
         # sample data.
-        s0 = agent.observe()
-        if (torch.rand(1) > epsilon):
-            a = agent.Q_choice(s0)
-        else:
-            a = agent.random_choice()
-        s1 = agent.observe()
-        r = agent.env.action(a)
+        with torch.no_grad():
+            s0 = agent.observe()
+            if (torch.rand(1) > epsilon):
+                a = agent.Q_choice(s0)
+            else:
+                a = agent.random_choice()
+            s1 = agent.observe()
+            r = agent.env.action(a)
 
         agent.optimizer.zero_grad()
 
