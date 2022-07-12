@@ -23,14 +23,17 @@ class MyDeepQNet(nn.Module):
         x = F.relu(self.linear2(x))
         x = F.relu(self.linear3(x))
         return self.linear4(x)
+    
+    def get_dtype(self):
+        return self.linear1.weight.dtype
 
 
 class environment:
     def __init__(self, MAX_VALUE):
         print("a simple environment is initiated.")
 
-        self.state = torch.tensor(MAX_VALUE)/torch.tensor(2.)  # initial: center
-        self.momentum = torch.tensor(0.)                       # initial: zero speed
+        self.state = MAX_VALUE/2.       # initial: center
+        self.momentum = 0.              # initial: zero speed
         self.MAX = MAX_VALUE
 
     def action(self, choice):
@@ -115,8 +118,7 @@ class DQNAgent:
         return torch.randint(0,self.MAX+1,(1,)).numpy()
 
     def get_Q(self, state):
-        s = torch.tensor(state)
-        s = s.to(self.device)
+        s = torch.tensor(state, device = self.device, dtype = self.model.get_dtype)
         return self.model.forward(s)
 
     def Q_choice(self, state):
