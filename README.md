@@ -66,7 +66,7 @@ conda install scikit-learn
 
 The GPU scheme is disabled (default) for ease. You can replace the line on <i>DQN.py</i> into:
 ```python
-> device = "cuda" if torch.cuda.is_available else "cpu"
+device = "cuda" if torch.cuda.is_available else "cpu"
 ```
 
 ## Code Usage
@@ -75,6 +75,8 @@ You may run <i>main.py</i> or <i>run.ipynb</i> to see what's going on.
 Additional changes may take place.
 
 ## TODO
-- Batch Normalization
-- Loss Moving Average
-- GUI (ipython notebook plot - using matplotlib)
+> - Batch Normalization
+> 
+> - Loss Moving Average
+> 
+> - GUI (ipython notebook plot - using matplotlib)
