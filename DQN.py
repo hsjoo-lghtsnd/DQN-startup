@@ -9,6 +9,7 @@ import torch.optim as optim
 class MyDeepQNet(nn.Module):
     def __init__(self, num_states, num_actions):
         print("Agent Q-Network is initiated.")
+        super(MyDeepQNet, self).__init__()
         device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
         self.linear1 = nn.Linear(num_states, 128).to(device)
