@@ -65,13 +65,20 @@ like this:
 
 ![conda-activate-reason](https://user-images.githubusercontent.com/46191084/178488583-8b5569cf-2f8f-470f-b7c2-d582b96cf4ef.png)
 
-The example <i>main.py</i> and <i>DQN.py</i> of this project are fast enough without GPU acceleration (It's actually faster when not using GPU acceleration! Tested on X5900 processor and RTX3090 GPU). The GPU acceleration can be turned on/off by assigning the <i>torch.device(string args...)</i> as you might intend. The GPU scheme is disabled (default) for ease. You can replace the line on <i>DQN.py</i> into:
+The example <i>main.py</i> and <i>DQN.py</i> of this project are fast enough without GPU acceleration.
+
+(It's actually faster when not using GPU acceleration! Tested on X5900 processor and RTX3090 GPU.)
+
+The GPU acceleration can be turned on/off by assigning the <i>torch.device(string args...)</i> as you might intend.
+
+The GPU scheme is disabled (default) for ease. You can replace the line on <i>DQN.py</i> into:
 ```python
 device = torch.device("cuda" if torch.cuda.is_available else "cpu")
 ```
+or, you can adjust the mark comment ('#') on the provided <i>DQN.py</i>.
 
 ## Code Usage
-You may run <i>main.py</i> or <i>run.ipynb</i> to see what's going on.
+You may run <i>main.py</i> to see what's going on.
 
 Additional changes may take place.
 
