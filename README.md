@@ -50,7 +50,7 @@ Please kindly note that cudatoolkit version may be different. You might need to 
 Run the scripts while your environment (DQN) is activated.
 
 ```shell
-conda install pytorch torchvision torchaudio cudatoolkit=11.0 -c pytorch
+conda install pytorch torchvision torchaudio cudatoolkit=11.3 -c pytorch
 conda install scikit-learn
 ```
 
