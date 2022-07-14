@@ -46,6 +46,9 @@ You need to install a <b>GPU-supported pytorch</b> by running below. You would a
 #### NOTE
 Please kindly note that cudatoolkit version may be different. You might need to use <i>cudatoolkit version of 11.4 or else</i>.
 
+#### NOTE
+Run the scripts while your environment (DQN) is activated.
+
 ```shell
 conda install pytorch torchvision torchaudio cudatoolkit=10.2 -c pytorch
 conda install scikit-learn
