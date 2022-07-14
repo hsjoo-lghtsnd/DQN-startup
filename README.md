@@ -71,7 +71,7 @@ like this:
 #### NOTE
 The example <i>main.py</i> and <i>DQN.py</i> of this project are fast enough without GPU acceleration.
 
-(It's actually faster when not using GPU acceleration! Tested on X5900 processor and RTX3090 GPU.)
+(It's actually <i>sometimes</i> faster when not using GPU acceleration! Tested on X5900 processor and RTX3090 GPU.)
 
 The GPU acceleration can be turned on/off by assigning the <i>torch.device(string args...)</i> as you might intend.
 
