@@ -59,7 +59,7 @@ conda install scikit-learn
 ```shell
 conda deactivate
 ```
-
+#### NOTE
 You can check your conda environment by:
 ```python
 import torch
@@ -68,6 +68,7 @@ like this:
 
 ![conda-activate-reason](https://user-images.githubusercontent.com/46191084/178488583-8b5569cf-2f8f-470f-b7c2-d582b96cf4ef.png)
 
+#### NOTE
 The example <i>main.py</i> and <i>DQN.py</i> of this project are fast enough without GPU acceleration.
 
 (It's actually faster when not using GPU acceleration! Tested on X5900 processor and RTX3090 GPU.)
