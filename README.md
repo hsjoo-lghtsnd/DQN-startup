@@ -88,8 +88,6 @@ You may run <i>main.py</i> to see what's going on.
 ~/DQN-startup$ python3 main.py
 ```
 
-Additional changes may take place.
-
 ## TODO
 > - Batch Normalization
 > 
