@@ -84,6 +84,10 @@ or, you can adjust the mark comment ('#') on the provided <i>DQN.py</i>.
 ## Code Usage
 You may run <i>main.py</i> to see what's going on.
 
+```shell
+~/DQN-startup$ python3 main.py
+```
+
 Additional changes may take place.
 
 ## TODO
