@@ -90,7 +90,7 @@ class environment:
 
         reward = acceleration**2
         if ((self.state > self.MAX) or (self.state < 0)):
-            reward = -100.
+            reward = -torch.tensor([100.]).to(device)
 
         return reward
 
@@ -204,5 +204,11 @@ def train(agent, iter_num, epsilon, __SHOW_ITER__=500, __DEBUG__=False):
             agent._put_loss(loss)
 
         if ((i+1)%__SHOW_ITER__ == 0):
+            print("**********************************")
+            if (__DEBUG__):
+                print("action: ", a.item())
+                print("current position:", agent.env.get_state().item(), "\tcurrent momentum:", agent.env.get_momentum_clear().item())
             print("Iteration:", i+1, "\t Random_movement: ", "yes" if piv < epsilon else "no", "\n", "loss = ", loss.item(), "reward = ", r.item(), "\n")
+
+
 
