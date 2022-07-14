@@ -44,13 +44,13 @@ Now you can install <i>pytorch</i> into your DQN environment. This section conta
 
 You need to install a <b>GPU-supported pytorch</b> by running below. You would also need the <b>scikit-learn</b> package for the data analysis. This would take a couple of minutes.
 #### NOTE
-Please kindly note that cudatoolkit version may be different. You might need to use <i>cudatoolkit version of 11.4 or else</i>.
+Please kindly note that cudatoolkit version may be different. You might need to use <i>cudatoolkit version of 10.2 or else</i>. The script is tested on RTX 3090.
 
 #### NOTE
 Run the scripts while your environment (DQN) is activated.
 
 ```shell
-conda install pytorch torchvision torchaudio cudatoolkit=10.2 -c pytorch
+conda install pytorch torchvision torchaudio cudatoolkit=11.0 -c pytorch
 conda install scikit-learn
 ```
 
