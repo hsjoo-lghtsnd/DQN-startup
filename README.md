@@ -39,6 +39,18 @@ You will see a similar screen like this:
 
 ![conda-activate](https://user-images.githubusercontent.com/46191084/178430890-7f6caeba-50be-40a7-9bd3-557cdb089ae8.png)
 
+### DQN environment setup
+Now you can install <i>pytorch</i> into your DQN environment. This section contains how to setup the environment.
+
+You need to install a <b>GPU-supported pytorch</b> by running below. You would also need the <b>scikit-learn</b> package for the data analysis. This would take a couple of minutes.
+#### NOTE
+Please kindly note that cudatoolkit version may be different. You might need to use <i>cudatoolkit version of 11.4 or else</i>.
+
+```shell
+conda install pytorch torchvision torchaudio cudatoolkit=10.2 -c pytorch
+conda install scikit-learn
+```
+
 (optional FYI) You can deactivate (unnecessarily) your conda environment by:
 
 ```shell
@@ -52,17 +64,6 @@ import torch
 like this:
 
 ![conda-activate-reason](https://user-images.githubusercontent.com/46191084/178488583-8b5569cf-2f8f-470f-b7c2-d582b96cf4ef.png)
-
-
-### DQN environment setup
-You need to install a <b>GPU-supported pytorch</b> by running below. You would also need the <b>scikit-learn</b> package for the data analysis. This would take a couple of minutes.
-#### NOTE
-Please kindly note that cudatoolkit version may be different.
-
-```shell
-conda install pytorch torchvision torchaudio cudatoolkit=10.2 -c pytorch
-conda install scikit-learn
-```
 
 The GPU scheme is disabled (default) for ease. You can replace the line on <i>DQN.py</i> into:
 ```python
