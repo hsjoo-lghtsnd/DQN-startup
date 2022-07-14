@@ -204,5 +204,5 @@ def train(agent, iter_num, epsilon, __SHOW_ITER__=500, __DEBUG__=False):
             agent._put_loss(loss)
 
         if ((i+1)%__SHOW_ITER__ == 0):
-            print("Iteration:", i+1, "\t", "loss = ", loss.item(), "Random_movement: ", "yes" if piv < epsilon else "no")
+            print("Iteration:", i+1, "\t Random_movement: ", "yes" if piv < epsilon else "no", "\n", "loss = ", loss.item(), "reward = ", r.item(), "\n")
 
